@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaAtari Emulator - Remote JAR</title>
+  <script src="https://cjrtnc.leaningtech.com/3.0/loader.js"></script>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    #emulator-container {
+      margin: 20px auto;
+      width: 800px;
+      height: 600px;
+      border: 2px solid #444;
+      background-color: #111;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #666;
+    }
+    p {
+      color: #aaa;
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🕹 JavaAtari Emulator (Remote JAR)</h1>
+  <p>Click below to launch the Atari 2600 emulator loading JAR remotely.</p>
+
+  <div id="emulator-container"></div>
+
+  <button onclick="CheerpJAppletViewer.launch('https://od.lk/s/NjhfMTI5MTYxNTU0Xw/javatari330.jar', '800x600')">
+    ▶️ Launch Emulator
+  </button>
+
+  <p><em>Warning:</em> If this fails due to CORS or network issues, consider downloading the JAR locally and serving via HTTP server.</p>
+
+  <script>
+    window.onload = function () {
+      cheerpjInit();
+    };
+  </script>
+
+</body>
+</html>
+
