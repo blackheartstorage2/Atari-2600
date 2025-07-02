@@ -2,8 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>JavaAtari Emulator - Remote JAR</title>
-  <script src="https://cjrtnc.leaningtech.com/3.0/loader.js"></script>
+  <title>JavaAtari Emulator - GitHub Hosted</title>
+  <script src="https://cdn.jsdelivr.net/npm/cheerpj@3.0/loader.js"></script>
+  <script>
+    window.onload = function () {
+      if (typeof cheerpjInit === 'function') {
+        console.log('CheerpJ loaded OK');
+        cheerpjInit();
+      } else {
+        console.error('CheerpJ NOT loaded');
+      }
+    };
+  </script>
   <style>
     body {
       background-color: #000;
@@ -41,23 +51,18 @@
 </head>
 <body>
 
-  <h1>🕹 JavaAtari Emulator (Remote JAR)</h1>
-  <p>Click below to launch the Atari 2600 emulator loading JAR remotely.</p>
+  <h1>🕹 JavaAtari Emulator (GitHub Hosted)</h1>
+  <p>Click below to launch the Atari 2600 emulator. The JAR file is hosted locally on this site.</p>
 
   <div id="emulator-container"></div>
 
-  <button onclick="CheerpJAppletViewer.launch('https://od.lk/s/NjhfMTI5MTYxNTU0Xw/javatari330.jar', '800x600')">
+  <button onclick="CheerpJAppletViewer.launch('javatari330.jar', 800, 600)">
     ▶️ Launch Emulator
   </button>
 
-  <p><em>Warning:</em> If this fails due to CORS or network issues, consider downloading the JAR locally and serving via HTTP server.</p>
-
-  <script>
-    window.onload = function () {
-      cheerpjInit();
-    };
-  </script>
+  <p><em>Note:</em> This should work without CORS issues as long as the JAR is in the same folder as this HTML page.</p>
 
 </body>
 </html>
 
+   
